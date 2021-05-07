@@ -6,6 +6,7 @@ import { BuyComponent } from './buy/buy.component';
 import { SellComponent } from './sell/sell.component';
 import { SearchComponent } from './search/search.component';
 import { ItemsComponent } from './items/items.component';
+import { ItemCardComponent } from './items/item-card/item-card.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ItemsComponent } from './items/items.component';
     BuyComponent,
     SellComponent,
     SearchComponent,
-    ItemsComponent
+    ItemsComponent,
+    ItemCardComponent
   ],
   imports: [
     BrowserModule
