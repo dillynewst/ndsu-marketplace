@@ -33,6 +33,7 @@ export class SellComponent implements OnInit {
     this.newItem = this.itemForm.value;
     this.itemService.addItem(this.newItem);
     console.log("Contact added successfully");
+    this.itemForm.reset();
   }
 
   // addNew(nameInput: string, descriptionInput: string, priceInput: number, sellerInput: string){
