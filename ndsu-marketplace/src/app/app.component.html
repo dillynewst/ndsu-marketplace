@@ -20,3 +20,29 @@
     </div>
   </div>
 </div>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyADsL4R1nlUT2WLlTiJQzU1i8gDfDhDDP8",
+    authDomain: "ndsu-marketplace.firebaseapp.com",
+    databaseURL: "https://ndsu-marketplace-default-rtdb.firebaseio.com",
+    projectId: "ndsu-marketplace",
+    storageBucket: "ndsu-marketplace.appspot.com",
+    messagingSenderId: "411190404078",
+    appId: "1:411190404078:web:ea37e9ba12a3c22bc5e4ff",
+    measurementId: "G-HJHCG8501G"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
