@@ -3,5 +3,15 @@
         <div class="container-fluid">
           <a class="navbar-brand">NDSU Marketplace</a>
         </div>
-      </nav>
+    </nav>
+</div>
+
+<div class="container">
+    <div>
+        <app-item-card
+        *ngFor = "let item of items"
+        [item]="item"
+        ></app-item-card>
+    </div>
+    
 </div>
