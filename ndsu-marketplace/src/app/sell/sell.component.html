@@ -1,7 +1,7 @@
 <p>List your Item for sale:</p>
 
-<label for="itemName">Item Name</label>
-<input type="text" id="itemNameInput" name="itemNameInput"><br><br>
+<!-- <label for="itemName">Item Name</label>
+<input type="text" id="nameInput" name="nameInput"><br><br>
 
 <label for="description">Description:</label>
 <input type="text" id="descriptionInput" name="descriptionInput"><br><br>
@@ -10,6 +10,29 @@
 <input type="text" id="priceInput" name="priceInput"><br><br>
 
 <label for="seller">Seller:</label>
-<input type="text" id="sellerinput" name="sellerinput"><br><br>
+<input type="text" id="sellerInput" name="sellerInput"><br><br>
 
-<button (click)="addNew()">Add New Item</button>
+<button (click)="addNew(nameInput, descriptionInput, priceInput, sellerInput)">Add New Item</button> -->
+
+<hr>
+  <div class="container">
+    <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="itemName" class="form-label">Name</label>
+            <input class="form-control" type="text" formControlName="itemName" required>
+        </div>
+        <div class="mb-3">
+            <label for="itemDescription" class="form-label">Description</label>
+            <input class="form-control" type="text" formControlName="itemDescription" required>
+        </div>
+        <div class="mb-3">
+            <label for="itemPrice" class="form-label">Price</label>
+            <input class="form-control" type="text" formControlName="itemPrice">
+        </div>
+        <div class="mb-3">
+            <label for="itemSeller" class="form-label">Seller</label>
+            <input class="form-control" type="text" formControlName="itemSeller">
+        </div>
+        <button type="submit" [disabled]="!itemForm.valid" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
