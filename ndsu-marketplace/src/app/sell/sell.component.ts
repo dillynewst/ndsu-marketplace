@@ -8,13 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class SellComponent implements OnInit {
 
   constructor() { }
-  addNew() {
-    
-  }
   ngOnInit(): void {
   }
 
   addNew(){
-    
+
   }
 }
