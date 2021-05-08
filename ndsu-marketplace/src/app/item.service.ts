@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../app/model/item';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
   // Types of items : text_books, furniture, clothes, electronics, school_materials, etc
-  items: Array<Item> = [  
+  /*Iitems: Array<Item> = [  
   {
     itemId : 1,
     itemName : 'Television',
@@ -21,7 +23,8 @@ export class ItemService {
     itemDescription : 'black leather loveseat',
     itemPrice : 120.00,
     itemSeller : 'jane.doe@ndsu.edu'
-  } ]
+  } ]*/
+
 
 
 
@@ -39,8 +42,17 @@ export class ItemService {
     }
   }
 
-  getItem(index: number){
-    return this.items[index];
+  getItem(){
+    return this.http.get<Item[]>
+    ('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + 'student.json')
+    .pipe(map(responseData => {
+      const itemArray : Item[] = [];
+      for (const key in responseData){
+          itemArray.push(repsonseData[key]);
+      }
+      return itemArray;
+    })
+
   }
 
   constructor() { }
