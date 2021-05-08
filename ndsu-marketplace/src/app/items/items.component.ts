@@ -40,17 +40,17 @@ export class ItemsComponent implements OnInit {
     this.items
   }
 
-  editItem() {
 
-  }
+function editItem() {
+  throw new Error('Function not implemented.');
+}
 
-  getItem()  {
+function getItems() {
+  throw new Error('Function not implemented.');
+}
 
-  }
-
-  removeItems() {
-
-  }
-
+function removeItems() {
+  throw new Error('Function not implemented.');
+}
 
 }
