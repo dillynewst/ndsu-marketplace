@@ -40,10 +40,6 @@ export class ItemCardComponent implements OnInit {
       {
         delete this.itemList[i];
       }
-
-      
-
-      
     });
   
   }
