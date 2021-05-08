@@ -31,7 +31,7 @@ export class BuyComponent implements OnInit {
       this.fetchData();
     }
   
-    BuyItem(name) {
+    buyItem(name) {
       let i = 0;
       this.itemList.forEach(element => {
         i++;
