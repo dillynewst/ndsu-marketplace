@@ -30,7 +30,8 @@ export class SellComponent implements OnInit {
     itemName: ['', Validators.required],
     itemDescription: ['', Validators.required],
     itemPrice: ['', Validators.required],
-    itemSeller: ['', Validators.required]
+    itemSeller: ['', Validators.required],
+    itemBuy: ['', Validators.required]
   });
   fetchData(){
     this.itemService.getItems().subscribe(data => {
@@ -57,6 +58,7 @@ export class SellComponent implements OnInit {
     console.log("Contact added successfully");
     this.itemForm.reset();
     this.addNewItem(this.newItem);
+    
   }
 
   // addNew(nameInput: string, descriptionInput: string, priceInput: number, sellerInput: string){

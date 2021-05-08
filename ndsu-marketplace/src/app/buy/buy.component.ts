@@ -31,5 +31,20 @@ export class BuyComponent implements OnInit {
       this.fetchData();
     }
   
+    BuyItem(name) {
+      let i = 0;
+      this.itemList.forEach(element => {
+        i++;
+        if(element.itemName == name)
+        {
+          delete this.itemList[i];
+        }
+
+        
+
+        
+      });
+    
+    }
 
 }
