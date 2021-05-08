@@ -28,32 +28,31 @@ export class ItemService {
 
 
 
-  addItem(newItem: Item){
-    this.items.push(newItem);
-  }
+  // addItem(newItem: Item){
+  //   this.items.push(newItem);
+  // }
 
-  editItem(updateItem: Item, id: number){
-    this.items[id] = updateItem;
-  }
+  // editItem(updateItem: Item, id: number){
+  //   this.items[id] = updateItem;
+  // }
 
-  removeItem(index: number){
-    if(index > -1){
-      this.items.splice(index, 1);
-    }
-  }
+  // removeItem(index: number){
+  //   if(index > -1){
+  //     this.items.splice(index, 1);
+  //   }
+  // }
 
-  getItem(){
-    return this.http.get<Item[]>
-    ('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + 'student.json')
+  getItems(){
+    return this.http.get<Item[]>('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + 'student.json')
     .pipe(map(responseData => {
       const itemArray : Item[] = [];
       for (const key in responseData){
-          itemArray.push(repsonseData[key]);
+          itemArray.push(responseData[key]);
       }
       return itemArray;
     })
-
+    );
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }
