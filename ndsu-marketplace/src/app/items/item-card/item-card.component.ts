@@ -32,7 +32,7 @@ export class ItemCardComponent implements OnInit {
     ngOnInit(): void {
       this.fetchData();
     }
-  buyItem(name) {
+  buyItem(name: string) {
     let i = 0;
     this.itemList.forEach(element => {
       i++;
