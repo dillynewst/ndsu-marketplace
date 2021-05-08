@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { ItemService } from '../item.service';
+import { Item } from '../model/item';
 
 @Component({
   selector: 'app-buy',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuyComponent implements OnInit {
 
-  constructor() { }
+  itemList: Item[] = [];
+  itemId : number;
+  itemName : string;
+  itemType : string;
+  itemDescription : string;
+  itemPrice : number;
+  itemSeller : string;
 
-  ngOnInit(): void {
+  fetchData(){
+    this.itemService.getItems().subscribe(data => {
+      this.itemList = data;
+      console.log(data);
+    });
   }
+  constructor(private itemService: ItemService, private fb: FormBuilder) { }
+
+
+    ngOnInit(): void {
+      this.fetchData();
+    }
+  
 
 }
