@@ -1,9 +1,8 @@
 .navbar-brand {
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 45px;
+
 }
 
-.navbar-brand {
-    font-size: 40px;
-    font-weight: bold;
-}
+.container-fluid {
+    background-color:	#006400;
+} 
