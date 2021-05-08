@@ -21,23 +21,31 @@ export class ItemsComponent implements OnInit {
 
   constructor(private itemService: ItemService) { }
 
-  ngOnInit(): void {
-    this.itemList.getItems().subscribe(data => {
+  fetchData(){
+    this.itemService.getItems().subscribe(data => {
       this.itemList = data;
       console.log(data);
     });
-
   }
 
-  addNewItem() Item
-    const newItem: Items = {
-      itemId: ++this.iitemId,
-      itemType: this.iitemType,
-      itemDescription: this.iitemDescription,
-      itemPrice: this.iitemPrice,
-      itemSeller: this.iitemSeller
-    };
-    this.items
+  ngOnInit(): void {
+    this.fetchData();
+  }
+
+  addNewItem(){
+    const newItem: Item = {
+      itemId: ++this.itemId,
+      itemName: this.itemName,
+      itemType: this.itemType,
+      itemDescription: this.itemDescription,
+      itemPrice: this.itemPrice,
+      itemSeller: this.itemSeller
+    }
+    
+    this.itemService.addItem(newItem).subscribe(data => {
+      console.log(data);
+      this.fetchData();
+    })
   }
 
   editItem() {

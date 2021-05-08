@@ -28,9 +28,9 @@ export class ItemService {
 
 
 
-  // addItem(newItem: Item){
-  //   this.items.push(newItem);
-  // }
+  addItem(newItem: Item){
+    return this.http.post('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + 'student.json', newItem);
+  }
 
   // editItem(updateItem: Item, id: number){
   //   this.items[id] = updateItem;
