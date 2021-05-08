@@ -49,16 +49,16 @@ export class ItemsComponent implements OnInit {
   }
 
 
-function editItem() {
-  throw new Error('Function not implemented.');
-}
+// function editItem() {
+//   throw new Error('Function not implemented.');
+// }
 
-function getItems() {
-  throw new Error('Function not implemented.');
-}
+// function getItems() {
+//   throw new Error('Function not implemented.');
+// }
 
-function removeItems() {
-  throw new Error('Function not implemented.');
-}
+// function removeItems() {
+//   throw new Error('Function not implemented.');
+// }
 
 }
