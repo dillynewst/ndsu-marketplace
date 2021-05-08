@@ -54,5 +54,9 @@ export class ItemService {
     );
   }
 
+  clearData(){
+    return this.http.delete('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + 'student.json');
+  }
+
   constructor(private http: HttpClient) { }
 }
