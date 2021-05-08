@@ -32,15 +32,25 @@ export class ItemService {
     return this.http.post('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + 'student.json', newItem);
   }
 
-  // editItem(updateItem: Item, id: number){
-  //   this.items[id] = updateItem;
-  // }
+  editItem(updateItem: Item){
+    //this.items[id] = updateItem;
 
-  // removeItem(index: number){
-  //   if(index > -1){
-  //     this.items.splice(index, 1);
-  //   }
-  // }
+    // TODO: find way to get specific URL for item
+    this.http.put('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + '/student/', updateItem).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  removeItem(index: number){
+    // if(index > -1){
+    //   this.items.splice(index, 1);
+    // }
+
+    // TODO: find way to get specific URL for item
+    this.http.delete('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + '/student/').subscribe(data => {
+      console.log(data);
+    });
+  }
 
   getItems(){
     return this.http.get<Item[]>('https://ndsu-marketplace-default-rtdb.firebaseio.com/' + 'student.json')
